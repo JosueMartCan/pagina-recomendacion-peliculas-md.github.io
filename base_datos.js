@@ -218,5 +218,5 @@ for(let i =0; i<generos_BD.length;i++){ //itera sobre cada genero, luego busca e
 
 function getRutaImagen(titulo) {
     const nombreArchivo = titulo.replace(/:/g, '');
-    return `./imagenes/${nombreArchivo.toLowerCase()}.jpg.jpg`;
+    return `./imagenes/${nombreArchivo.toLowerCase()}.jpg`;
   }
