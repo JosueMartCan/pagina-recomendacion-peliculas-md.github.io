@@ -1,0 +1,53 @@
+/* Estilos para el gráfico de Venn */
+#venn-container {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    background-color: lightcoral;
+}
+
+#venn-container h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+}
+
+#venn-container h3 span{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: black;
+}
+
+#venn-diagram {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+
+
+/* .venn-area text {
+    fill: #333;
+    font-weight: bold;
+    text-anchor: middle;
+    pointer-events: none;
+} */
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    max-width: 300px;
+  }

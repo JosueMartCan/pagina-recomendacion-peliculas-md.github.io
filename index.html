@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendador de Películas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="venn.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venn.js/0.2.20/venn.min.js"></script>
+
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venn.js/0.2.0/venn.min.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Recomendador de Películas</h1>
+            <p class="subtitle">Encuentra tu próxima película favorita</p>
+        </header>
+
+        <!--Formulario para seleccionar criterios-->
+        <div class="form-container">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="genero">Género:</label>
+                    <select id="genero" class="select-box">
+                        <option value="">Seleccione un género</option>
+                        <!-- <option value="Acción">Acción</option>
+                        <option value="Comedia">Comedia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Ciencia Ficción">Ciencia Ficción</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Animación">Animación</option> -->
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="subgenero">Subgénero:</label>
+                    <select id="subgenero" class="select-box" disabled>
+                        <option value="">Seleccione un subgénero</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="director">Director:</label>
+                    <select id="director" class="select-box" disabled>
+                        <option value="">Seleccione un director</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="duracion">Duración máxima:</label>
+                    <div class="slider-container">
+                        <input type="range" id="duracion" min="90" max="210" value="180" class="slider">
+                        <span id="duracion-valor">180 min</span>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label for="clasificacion">Clasificación:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="G" checked> G</label>
+                        <label><input type="checkbox" value="PG" checked> PG</label>
+                        <label><input type="checkbox" value="PG-13" checked> PG-13</label>
+                        <label><input type="checkbox" value="R" checked> R</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="recomendar" class="btn primary">Recomendar películas</button>
+                <button id="limpiar" class="btn secondary">Limpiar filtros</button>
+            </div>
+        </div>
+
+        <!--Contenedor para las estadísticas-->
+        <div class="stats-container" id="stats-container">
+            <h3>Estadísticas de búsqueda</h3>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number" id="total-peliculas">0</span>
+                    <span class="stat-label">Películas encontradas</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" id="duracion-promedio">0</span>
+                    <span class="stat-label">Duración promedio (min)</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" id="director-popular">-</span>
+                    <span class="stat-label">Director popular</span>
+                </div>
+            </div>
+        </div>
+
+        <!--Contenedor para mostrar las recomendaciones-->
+        <div class="resultados-container">
+            <h3>Películas recomendadas</h3>
+            <div id="resultados" class="pelicula-grid"></div>
+        </div>
+
+        <!--Contenedor para el gráfico de Venn(VOLÉ)-->
+        <div id="venn-container">
+            <h3><strong>Diagramas de Venn-Euler</strong><br><span>Interactivo: Pase su mouse sobre los conjuntos</span></h3>
+                <div id="venn-diagram" class="venn-diagram"></div>
+                <div id="tooltip" class="tooltip"></div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Recomendador de Películas</p>
+    </footer>
+
+    <script src="base_datos.js"></script>
+    <script src="script.js"></script>
+    <script src="venn.js"></script>
+</body>
+</html>
