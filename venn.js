@@ -340,36 +340,3 @@ function generarVenn(lists_dicts_Categ){
         tooltip.style("opacity", 0);
       });
 }
-
-
-
-
-
-
-
-
-
-
-// Mostrar títulos de conjuntos afuera de los círculos
-/* const circlePositions = {};
-
-div.selectAll("g.venn-circle").each(function(d) {
-  if (d.sets.length === 1) {
-    const circle = d3.select(this).select("path").node();
-    const bbox = circle.getBBox();
-    const centerX = bbox.x + bbox.width / 2;
-    const centerY = bbox.y + bbox.height / 2;
-    circlePositions[d.sets[0]] = { x: centerX, y: centerY };
-  }
-});
-
-Object.entries(circlePositions).forEach(([label, pos]) => {
-  div.append("text")
-    .attr("x", pos.x)
-    .attr("y", pos.y - 70) // más arriba del círculo
-    .attr("text-anchor", "middle")
-    .attr("class", "venn-label")
-    .style("font-size", "16px")
-    .style("font-weight", "bold")
-    .text(label);
-}); */
